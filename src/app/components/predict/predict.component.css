@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url(../../../assets/images/pred.webp);
+    
+    background-size: cover;
+    background-position: bottom;
+    z-index: -1;
+}
+
+.bottom h1 {
+    color: white;
+    display: flex;
+    font-family: 'Baron';
+    margin-top: 75px;
+    font-size: 3em;
+    justify-content: center;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+    background: white;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-family: 'Baron';
+    font-size: 30px;
+    color: #1A120B;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page form {
+    width: 500px;
+    
+}
+
+.page .form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Dosis';
+}
+form input[type="text"],
+select,
+textarea{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+.signup-btn {
+    display: block;
+    width: 50%;
+    background: #3C2A21;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    margin: 20px 0 20px 25%;
+}
+
+.signup-btn:hover {
+    background: #6B4F4F;
+    cursor: pointer;
+}
+
+
+
+.error {
+    font-weight: 300;
+    color: #ff3860;
+    margin-bottom: 5px;
+    font-family: 'Dosis';
+}
+
+.small {
+    font-size: 80%;
+    text-align: center;
+    color: #ff3860;
+}

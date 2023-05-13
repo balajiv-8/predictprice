@@ -1,0 +1,79 @@
+
+<ng-container *ngIf="loading">
+    <app-loading></app-loading>
+  </ng-container>
+  <ng-container *ngIf="!loading">
+  
+  
+  
+  
+  <div class="bottom">
+    <h1>TRY OUR AI BASED PREDICTION ALGORITHM FOR HOUSE PRICES</h1>
+    <div class="page">
+      <form  [formGroup]="predictForm" (ngSubmit)="predict()">
+        <section class="copy">
+            <h2>Enter Details to predict</h2>
+        </section>
+        <div class="input-container">
+            <label for="int_sqft">Enter square feet area: </label>
+            <input type="text" id = "int_sqft" formControlName = "int_sqft" name = "int_sqft" [ngClass]="{'is-invalid': submitted && predictForm.controls.int_sqft.errors}">
+            <div *ngIf="submitted && predictForm.controls.int_sqft.errors" class = "error">
+              <div *ngIf="submitted && predictForm.controls.int_sqft.errors.required">
+                  This field is required
+              </div>
+          </div>
+        </div>
+        <div class="input-container">
+            <label for="area">Choose neighborhood: </label>
+            <select id="area" name="area" formControlName = "area" [ngClass]="{'is-invalid': submitted && predictForm.controls.area.errors}">
+              <option *ngFor="let area of areas" [value]="area.value">
+                {{area.label}}
+              </option>
+            </select>
+            <div *ngIf="submitted && predictForm.controls.area.errors" class = "error">
+              <div *ngIf="submitted && predictForm.controls.area.errors.required">
+                  This field is required
+              </div>
+          </div>
+            
+        </div>
+        <div class="input-container">
+            <label for="bhk">Choose number of bedrooms: </label>
+            <select id="bhk" name="bhk" formControlName = "bhk" [ngClass]="{'is-invalid': submitted && predictForm.controls.bhk.errors}">
+              <option *ngFor="let bhk of bhks" [value]="bhk.value">
+                {{bhk.label}}
+              </option>
+            </select>
+            <div *ngIf="submitted && predictForm.controls.bhk.errors" class = "error">
+              <div *ngIf="submitted && predictForm.controls.bhk.errors.required">
+                  This field is required
+              </div>
+          </div>
+            
+        </div>
+        <div class="input-container">
+            <label for="n_bathroom">Choose number of bathrooms: </label>
+            <select id="n_bathroom" name="n_bathroom" formControlName = "n_bathroom" [ngClass]="{'is-invalid': submitted && predictForm.controls.n_bathroom.errors}">
+              <option *ngFor="let n_bathroom of n_bathrooms" [value]="n_bathroom.value">
+                {{n_bathroom.value}}
+              </option>
+            </select>
+            <div *ngIf="submitted && predictForm.controls.n_bathroom.errors" class = "error">
+              <div *ngIf="submitted && predictForm.controls.n_bathroom.errors.required">
+                  This field is required
+              </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="signup-btn">PREDICT NOW</button>
+        <label>Predicted Price (in Lakhs): </label>
+        <textarea [formControl]="p"></textarea> 
+        <section class="copy-legal">
+          <p><span class="small">This prediction is based on availabe data from Kaggle. The actual prices may vary slightly or even drastically for some areas. The system is W.I.P and requires extensive testing.</span></p>
+      </section>
+    </form>
+      
+    </div>
+  </div>
+  </ng-container>
+  
